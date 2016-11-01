@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -99,6 +98,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Address of Redis instance, our Celery broker
+BROKER_URL = 'redis://localhost:6379/0'
+BROKER_POOL_LIMIT = 8
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
