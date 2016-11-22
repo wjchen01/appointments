@@ -35,13 +35,13 @@ DJANGO_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles'
+    'django.contrib.staticfiles',
 )
 
 THIRD_PARTY_APPS = (
     'bootstrap3',
     'django_forms_bootstrap',
-    'timezone_field'
+    'timezone_field',
 )
 
 LOCAL_APPS = (
@@ -49,7 +49,7 @@ LOCAL_APPS = (
 )
 
 JENKINS_APPS = (
-    'django_jenkins'
+    'django_jenkins',
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS + JENKINS_APPS
@@ -118,9 +118,8 @@ AUTH_PASSWORD_VALIDATORS = [
 JENKINS_TASKS = (
     'django_jenkins.tasks.run_pep8',
     'django_jenkins.tasks.run_pyflakes',
-    'django_jenkins.tasks.run_jslint',
-    'django_jenkins.tasks.run_csslint',    
-    'django_jenkins.tasks.run_sloccount'
+    'django_jenkins.tasks.run_flake8',
+#    'django_jenkins.tasks.run_csslint',
 )
 
 # Address of Redis instance, our Celery broker
