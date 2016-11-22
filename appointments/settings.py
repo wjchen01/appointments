@@ -115,6 +115,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Jenkins
+PROJECT_APPS = (
+    'reminders',
+)
+
 JENKINS_TASKS = (
     'django_jenkins.tasks.run_pep8',
     'django_jenkins.tasks.run_pyflakes',
