@@ -29,14 +29,30 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+DJANGO_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-]
+    'django.contrib.staticfiles'
+)
+
+THIRD_PARTY_APPS = (
+    'bootstrap3',
+    'django_forms_bootstrap',
+    'timezone_field'
+)
+
+LOCAL_APPS = (
+    'reminders',
+)
+
+JENKINS_APPS = (
+    'django_jenkins'
+)
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS + JENKINS_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -97,6 +113,15 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# Jenkins
+JENKINS_TASKS = (
+    'django_jenkins.tasks.run_pep8',
+    'django_jenkins.tasks.run_pyflakes',
+    'django_jenkins.tasks.run_jslint',
+    'django_jenkins.tasks.run_csslint',    
+    'django_jenkins.tasks.run_sloccount'
+)
 
 # Address of Redis instance, our Celery broker
 BROKER_URL = 'redis://localhost:6379/0'

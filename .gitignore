@@ -9,6 +9,7 @@ appointments/staticfiles
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
+__pycache__/*
 *.py[cod]
 
 # C extensions
@@ -43,6 +44,7 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 # Unit test / coverage reports
+db.sqlite3
 htmlcov/
 .tox/
 .coverage
